@@ -6,8 +6,10 @@ import {localNotificationService} from './src/LocalNotificationService';
 
 export default function App() {
   useEffect(() => {
-    fcmService.register(onRegister, onNotification, onOpenNotification);
-    localNotificationService.configure(onOpenNotification);
+    fcmService.registerAppWithFCM()
+    fcmService.register(onRegister, onNotification, onOpenNotification)
+    localNotificationService.configure(onOpenNotification)
+
 
     function onRegister(token) {
       console.log('[App] onRegister: ', token);
