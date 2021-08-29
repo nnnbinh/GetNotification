@@ -10,7 +10,6 @@ export default function App() {
     fcmService.register(onRegister, onNotification, onOpenNotification)
     localNotificationService.configure(onOpenNotification)
 
-
     function onRegister(token) {
       console.log('[App] onRegister: ', token);
     }
